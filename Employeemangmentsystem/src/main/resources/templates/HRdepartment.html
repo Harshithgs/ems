@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+*{
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+}
+body{
+    max-width: 100%;
+    background-image:
+				url("https://itsm.tools/wp-content/uploads/2020/07/successful-employees.png");
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+}
+nav{
+    max-width: 100%;
+    display: flex;
+    height: 75px;
+    width: 100%;
+    background-color: rgb(226, 211, 183);
+}
+#right-side{
+    max-width: 100%;
+    height: 75px;
+    width: 45%;
+    margin-left: 46%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: red;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    position: relative;
+}
+a:hover{
+    color: blue;
+}
+.fa-solid{
+    position: relative;
+    top: 4px;
+    left: 2px;
+}
+
+
+footer {
+               background-color: #ecf0f1; /* Lightened color */
+               color: #2c3e50;
+               text-align: center;
+               padding: 10px;
+               margin-top: 2%;
+
+           } p {
+       font-size: 1.2em; /* Increase font size for paragraphs */
+       color: #3f454a;
+   }
+   #abc{
+       width: 75px; /* Set the width to 60% */
+       height: auto; 
+       display: block; /* Remove default inline behavior */
+       margin: 1px auto; 
+   }
+   #d{
+    width: 60%; /* Set the width to 60% */
+    height: auto; /* Maintain aspect ratio while adjusting width */
+    display: block; /* Remove default inline behavior */
+    margin: 10px auto;
+   }
+   #icon a {
+            color: #2c3e50; /* Set the color for the social media icons */
+            text-decoration: none;
+            margin-right: 10px; /* Adjust spacing between icons */
+        }
+
+        #icon a:hover {
+            color: #3498db; /* Change color on hover */
+        } 
+        
+        footer{   
+        padding:25px;
+       background: rgb(226, 211, 183);
+       }
+       .content {
+			background-color: #fff;
+			padding: 20px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+			margin-top: 20px;
+			background-image:
+				url("https://w0.peakpx.com/wallpaper/617/788/HD-wallpaper-anonymous-suite-employee-hacker-unknown.jpg");
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+        .content h2 {
+			margin: 0;
+			margin-bottom: 20px;
+			color: antiquewhite;
+		}
+        #output-table {
+			color: white;
+			margin-left: 45%;
+		}
+        button {
+        background-color: #e74c3c;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        margin: 0px 140px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        width: 25%;
+      }
+      button:hover {
+        background-color: tomato;
+      }
+      
+		.content h2 {
+			margin: 0;
+			margin-bottom: 20px;
+			color: antiquewhite;
+		}
+        .header {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+		}
+        .content p {
+			margin: 0;
+			margin-bottom: 10px;
+			font-size: 20px;
+			color: #f1e9e9;
+			/* Adjust text color for better visibility */
+		}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="logo">
+                <img src="https://www.planotechgroupofcompanies.com/wp-content/uploads/2023/11/Picture1-removebg-preview.png" alt="Logo" height="75px" width="250px">
+            </div>
+            <div id="right-side">
+                <li><a href="/logout">Log out</a></li>
+            </div>
+        </nav>
+    </header>
+
+<div>
+
+    <div class="container">
+		<div class="header">
+			<center>
+				<h1>Welcome developer</h1>
+			</center>
+		</div>
+		<div class="content">
+			<center>
+				<h2>Welcome<h2 th:text="${list.username}"></h2> </h2>
+			</center>
+				<h2> Number of leaves:<h2 th:text="${list.leaves}"></h2></h2>
+				<h2>Today's score:<h2 th:text="${list.dailyscroe}"></h2></h2>
+					<p>
+						As an employee make sure you <br> ➣Make Continuous Learning a
+						Priority <br> ➣Enhance Effective Communication <br> ➣
+						Master the Art of Time Management <br> ➣ Cultivate
+						Adaptability <br> ➣Foster Team Collaboration <br>
+						➣Develop Leadership Skills <br> ➣Build Strong Professional
+						Networks <br> ➣Sharpen Your Tech Skills <br>
+					<h1>.</h1>
+					<p id="datetime"></p>
+					<button onclick="showTable()">Show Table</button>
+
+					<!-- Table container -->
+					<div id="table-container">
+						<table id="output-table" style="border: 5px solid white;"
+							border="5px" cellpadding="5px" cellspacing="5px">
+							<thead>
+								<tr>
+									<th>In</th>
+									<th>Out</th>
+									<th>Salary</th>
+									<th>Overall Score</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- Add your table data here -->
+								<tr th:each="list:${list}">
+									<td th:text="${list.intime}">Value1</td>
+									<td th:text="${list.outtime}">Value2</td>
+									<td th:text="${list.salary}">Value3</td>
+									<td th:text="${list.totalscroe}">Value4</td>
+								</tr>
+								<!-- Add more rows as needed -->
+							</tbody>
+						</table>
+					</div>
+
+					<script>
+						function showTable() {
+							// Get the table container element
+							var tableContainer = document
+									.getElementById("table-container");
+
+							// Toggle the display style to show/hide the table
+							if (tableContainer.style.display === "none") {
+								tableContainer.style.display = "block";
+							} else {
+								tableContainer.style.display = "none";
+							}
+						}
+					</script>
+
+					<script>
+						function updateDateTime() {
+							// Get current date and time
+							var currentDate = new Date();
+
+							// Format the date and time
+							var options = {
+								weekday : 'long',
+								year : 'numeric',
+								month : 'long',
+								day : 'numeric',
+								hour : 'numeric',
+								minute : 'numeric',
+								second : 'numeric',
+								timeZoneName : 'short'
+							};
+							var formattedDateTime = currentDate
+									.toLocaleDateString('en-US', options);
+
+							// Display the formatted date and time
+							document.getElementById('datetime').innerHTML = formattedDateTime;
+						}
+
+						// Call the function initially
+						updateDateTime();
+
+						// Update date and time every second
+						setInterval(updateDateTime, 1000);
+					</script>
+
+					<form action="/employee/report" id="report" method="get">
+					<input type="text" name="department" value="HR" hidden="hidden">
+					<input type="number" name="Id" th:value="${Id}" hidden="hidden">
+						<button class="button">Click here to submit
+							today's report</button>
+					</form>
+		</div>
+	</div>
+</div>
+<footer>
+        <div id="icon">
+            
+            <h5>Follow-us</h5>
+            <a href="https://www.facebook.com/planotechevents" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/planotechevents11/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/darshan-kumar-k/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://twitter.com/PlanotechEvents" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <p class="p11">Â© Copyright 2022 Planotech Group</p>
+        <p class="p1">Contact Information:</p>
+        <p class="p2">
+            <i class="fa-regular fa-envelope"></i>
+            planotech@gmail.com |
+            <i class="fa-solid fa-phone"></i>
+            +91 9876543210
+        </p>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/22e204274b.js" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+*{
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+}
+body{
+    max-width: 100%;
+}
+nav{
+    max-width: 100%;
+    display: flex;
+    height: 75px;
+    width: 100%;
+    background-color: rgb(226, 211, 183);
+}
+#right-side{
+    max-width: 100%;
+    height: 75px;
+    width: 45%;
+    margin-left: 46%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: red;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    position: relative;
+}
+a::after{
+    content: " ";
+    height: 3px;
+    width: 0%;
+    background-color: #001C30;
+    border-radius: 25%;
+    position: absolute;
+    top: 22px;
+    left: 0;
+    transition: 0.5s;
+}
+a:hover{
+    color: blue;
+}
+a:hover::after{
+    width: 100%;
+}
+.fa-solid{
+    position: relative;
+    top: 4px;
+    left: 2px;
+}
+form {
+        max-width: 400px;
+        max-height: 800px;
+        margin: 0px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+      label {
+        display: block;
+        font-weight: bold;
+        color: #b8b5b5;
+      }
+      label::after {
+        content: " *";
+        color: red;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+
+footer {
+               background-color: #ecf0f1; /* Lightened color */
+               color: #2c3e50;
+               text-align: center;
+               padding: 10px;
+               margin-top: 2%;
+           } p {
+       font-size: 1.2em; /* Increase font size for paragraphs */
+       color: #3f454a;
+   }
+   #abc{
+       width: 75px; /* Set the width to 60% */
+       height: auto; 
+       display: block; /* Remove default inline behavior */
+       margin: 1px auto; 
+   }
+   #d{
+    width: 60%; /* Set the width to 60% */
+    height: auto; /* Maintain aspect ratio while adjusting width */
+    display: block; /* Remove default inline behavior */
+    margin: 10px auto;
+   }
+   #icon a {
+            color: #2c3e50; /* Set the color for the social media icons */
+            text-decoration: none;
+            margin-right: 10px; /* Adjust spacing between icons */
+        }
+
+        #icon a:hover {
+            color: #3498db; /* Change color on hover */
+        } 
+        
+        footer{   
+        padding:25px;
+       background: rgb(226, 211, 183);
+       }
+       button {
+        background-color: #e74c3c;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        margin: 0px 140px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+       
+      }
+      button:hover {
+        background-color: tomato;
+      }
+      #im{
+        width: 30%;
+        height: 20%;
+      }
+    </style>
+     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('myForm');
+
+            form.addEventListener('submit', function (event) {
+                let valid = true;
+
+                // Validate username
+                const username = document.getElementById('username');
+                if (username.value.trim() === '') {
+                    setError(username, 'Username is required');
+                    valid = false;
+                } else {
+                    clearError(username);
+                }
+
+                // Validate email
+                const email = document.getElementById('email');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email.value.trim())) {
+                    setError(email, 'Enter a valid email address');
+                    valid = false;
+                } else {
+                    clearError(email);
+                }
+
+                // Validate phone
+                const phone = document.getElementById('phone');
+                const phoneRegex = /^[0-9]{10}$/;
+                if (!phoneRegex.test(phone.value.trim())) {
+                    setError(phone, 'Enter a valid 10-digit phone number');
+                    valid = false;
+                } else {
+                    clearError(phone);
+                }
+
+                // Validate address
+                const address = document.getElementById('address');
+                if (address.value.trim() === '') {
+                    setError(address, 'Address is required');
+                    valid = false;
+                } else {
+                    clearError(address);
+                }
+
+                if (!valid) {
+                    event.preventDefault();
+                }
+            });
+
+            function setError(element, message) {
+                const errorElement = document.getElementById('${element.id}Error');
+                errorElement.innerHTML = message;
+            }
+
+            function clearError(element) {
+                const errorElement = document.getElementById('${element.id}Error');
+                errorElement.innerHTML = '';
+            }
+        });
+
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="logo">
+                <img src="https://www.planotechgroupofcompanies.com/wp-content/uploads/2023/11/Picture1-removebg-preview.png" alt="Logo" height="75px" width="250px">
+            </div>
+            <div id="right-side">
+                
+                <li><a href="/login">Log Out</a></li>
+            </div>
+        </nav>
+    </header>
+
+<div>
+
+<section>
+   <center><h1>User profile page</h1></center> 
+    <form id="myForm" action="/profile" method="post">
+        <div class="profile-pic">
+         <center>  <img src="https://img.freepik.com/free-vector/illustration-businessman_53876-5856.jpg?size=626&ext=jpg&ga=GA1.1.632798143.1705968000&semt=ais" alt="Profile Picture" id="im">
+         </center>  </div>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <div class="error-message" id="usernameError"></div>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <div class="error-message" id="emailError"></div>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone">
+        <div class="error-message" id="phoneError"></div>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address">
+        <div class="error-message" id="addressError"></div>
+
+        <input type="number" name="Id" th:value="${Id}" hidden="hidden"> 
+        <input type="text" name="department" th:value="${department}" hidden="hidden">        
+<center>
+        <button type="submit">Submit</button>
+    </center>
+    </form>
+</section>
+</div>
+<footer>
+        <div id="icon">
+            
+            <h5>Follow-us</h5>
+            <a href="https://www.facebook.com/planotechevents" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/planotechevents11/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/darshan-kumar-k/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://twitter.com/PlanotechEvents" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <p class="p11">Â© Copyright 2022 Planotech Group</p>
+        <p class="p1">Contact Information:</p>
+        <p class="p2">
+            <i class="fa-regular fa-envelope"></i>
+            planotech@gmail.com |
+            <i class="fa-solid fa-phone"></i>
+            +91 9876543210
+        </p>
+    </footer>
+
+
+</body>
+</html>
+
+
