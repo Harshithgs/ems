@@ -117,12 +117,56 @@ footer {
         font-family: Arial, sans-serif;
 
       }
+      .gg {
+	display: flex;
+	height: 50px;
+	padding: 0;
+	background:#4021f1;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	overflow: hidden;
+	font-family: "Quicksand", sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	cursor: pointer;
+    width: 15%;
+    position: absolute;
+    right: -10%;
+    
+}
+
+.gg:hover {
+	background: rgb(49, 72, 202);
+}
+
+.gg:active {
+	background: #4021f1;
+}         
+
+.gg__text,
+.gg__icon {
+	display: inline-flex;
+	align-items: center;
+	padding: 0 24px;
+	color: #fff;
+	height: 100%;
+}
+
+.gg__icon {
+	font-size: 1.5em;
+	background: rgba(0, 0, 0, 0.08);
+}
+#bb{
+    color: #ecf0f1;
+}
 </style>
 <script>
     function showDetails(department) {
       alert(`Viewing details for ${department} department.`);
       // You can replace the alert with your logic to show detailed information.
     }
+   
     
   </script>
 <body>
@@ -136,7 +180,26 @@ footer {
             </div>
         </nav>
     </header>
+    <div>
+		<h2 th:text="${pass}"></h2>
+		<h2 th:text="${fail}"></h2>
+		<form action="/admin/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <button type="submit">Upload</button>
+</form>
+	</div>
+<div>
+    <button class="gg">
+        <span class="gg__text"><a href="/signup" id ="bb">Add employee</a></span>
+        <span class="gg__icon">
+            <ion-icon name="person-add-outline"></ion-icon>
+        </span>
+    </button>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+</div>
+<br>
     <div>
         <form action="/admin/department" method="get">
             <!-- Departments Sections -->
@@ -180,14 +243,9 @@ footer {
             <h2>Design Department</h2>
             <p>Click here to view Design details and information.</p>
                     <button class="button" name="department" value="Design">DESIGN</button>
-          </section>
         </form>
-
-
-
     </div>
-
-
+	
 <footer>
         <div id="icon">
             

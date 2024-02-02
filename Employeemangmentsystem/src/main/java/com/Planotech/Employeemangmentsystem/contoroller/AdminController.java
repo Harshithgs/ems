@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.Planotech.Employeemangmentsystem.helper.ExcelHelper;
 import com.Planotech.Employeemangmentsystem.service.AdminService;
-import com.Planotech.Employeemangmentsystem.service.EmployeeManageService;
+import com.Planotech.Employeemangmentsystem.service.HelperService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -19,6 +21,10 @@ import jakarta.servlet.http.HttpSession;
 public class AdminController {
 	@Autowired
 	AdminService adminService;
+	@Autowired
+	ExcelHelper excelHelper;
+	@Autowired
+	HelperService helperService;
 	@GetMapping("/department")
 	public String Department(@RequestParam String department, ModelMap map, HttpSession httpSession) {
 		if(httpSession.getAttribute("admin")!=null) {
@@ -47,4 +53,20 @@ public class AdminController {
 	public String empHome(@PathVariable String department,HttpSession httpSession,ModelMap map) {
 		return adminService.EmpHomeTable(department,httpSession,map);
 	}
+	@GetMapping("/attandace/{id}/{department}")
+	public String Attandace(@PathVariable int id, @PathVariable String department, ModelMap map, HttpSession httpSession) {
+		return adminService.Attandace(id, department, map, httpSession);
+	}
+	@PostMapping(value = "/upload", consumes = "multipart/form-data")
+	public String upload(@RequestParam MultipartFile file, HttpSession httpSession, ModelMap map) {
+	    if (excelHelper.checkExcelFormat(file)) {
+	        helperService.save(file);
+	        map.put("pass", "Uploaded");
+	        return "AdminHome.html";
+	    } else {
+	        map.put("fail", "Please upload an Excel file");
+	        return "AdminHome.html";
+	    }
+	}
+	
 }

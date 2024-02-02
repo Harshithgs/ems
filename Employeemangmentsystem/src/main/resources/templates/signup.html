@@ -1,98 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Document</title>
-    <style>
-*{
-    padding: 0;
-    margin: 0;
-    max-width: 100%;
-}
-body{
-    max-width: 100%;
-}
-nav{
-    max-width: 100%;
-    display: flex;
-    height: 75px;
-    width: 100%;
-    background-color: rgb(226, 211, 183);
-}
-#right-side{
-    max-width: 100%;
-    height: 75px;
-    width: 45%;
-    margin-left: 46%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;
-}
-a{
-    text-decoration: none;
-    color: red;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 20px;
-    position: relative;
-}
-a:hover{
-    color: blue;
-}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.fa-solid{
-    position: relative;
-    top: 4px;
-    left: 2px;
-}
+	<title>Document</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			max-width: 100%;
+		}
 
-footer {
-    background-color: rgb(226, 211, 183);
-               color: #2c3e50;
-               text-align: center;
-               padding: 10px;
-           }
-   #abc{
-       width: 75px; /* Set the width to 60% */
-       height: auto; 
-       display: block; /* Remove default inline behavior */
-       margin: 1px auto; 
-   }
-   #d{
-    width: 60%; /* Set the width to 60% */
-    height: auto; /* Maintain aspect ratio while adjusting width */
-    display: block; /* Remove default inline behavior */
-    margin: 10px auto;
-   }
-   span::before {
-   
-   /* You can add more styles as needed */
-    
-   content: ' \265B';
-   }
-  
-   span{
-   font-family: "Times New Roman", Times, serif; /* Times New Roman font */
-   color: #c2885f; /* Lighter brown color */
+		body {
+			max-width: 100%;
+		}
 
-  }
-  #D{
-   width: 90%;
-  }
-  p {
-            font-family: "Times New Roman", Times, serif;    font-size: 20px; /* Set the font size */
-    font-weight: normal; /* Set the font weight (normal, bold, etc.) */
-    color: #333; /* Set the font color */
-    line-height: 1.5; /* Set the line height */
-    /* You can add more properties as needed */
-}
+		nav {
+			max-width: 100%;
+			display: flex;
+			height: 75px;
+			width: 100%;
+			background-color: rgb(226, 211, 183);
+		}
 
-section {
+		#right-side {
+			max-width: 100%;
+			height: 75px;
+			width: 45%;
+			margin-left: 46%;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			list-style: none;
+		}
+
+		a {
+			text-decoration: none;
+			color: red;
+			font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+			font-size: 20px;
+			position: relative;
+		}
+
+		a:hover {
+			color: blue;
+		}
+
+		.fa-solid {
+			position: relative;
+			top: 4px;
+			left: 2px;
+		}
+
+		footer {
+			background-color: rgb(226, 211, 183);
+			color: #2c3e50;
+			text-align: center;
+			padding: 10px;
+		}
+
+		#abc {
+			width: 75px;
+			/* Set the width to 60% */
+			height: auto;
+			display: block;
+			/* Remove default inline behavior */
+			margin: 1px auto;
+		}
+
+		#d {
+			width: 60%;
+			/* Set the width to 60% */
+			height: auto;
+			/* Maintain aspect ratio while adjusting width */
+			display: block;
+			/* Remove default inline behavior */
+			margin: 10px auto;
+		}
+
+		span::before {
+
+			/* You can add more styles as needed */
+
+			content: ' \265B';
+		}
+
+		span {
+			font-family: "Times New Roman", Times, serif;
+			/* Times New Roman font */
+			color: #c2885f;
+			/* Lighter brown color */
+
+		}
+
+		#D {
+			width: 90%;
+		}
+
+		p {
+			font-family: "Times New Roman", Times, serif;
+			font-size: 20px;
+			/* Set the font size */
+			font-weight: normal;
+			/* Set the font weight (normal, bold, etc.) */
+			color: #333;
+			/* Set the font color */
+			line-height: 1.5;
+			/* Set the line height */
+			/* You can add more properties as needed */
+		}
+
+		section {
 			margin: 20px;
 			padding: 20px;
-            background-color: #f7fafd;
+			background-color: #f7fafd;
 			border-radius: 8px;
 			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 		}
@@ -100,274 +123,383 @@ section {
 		h1 {
 			color: #2c3e50;
 			font-size: 2em;
-            font-family: "Times New Roman", Times, serif;    font-size: 28px; /* Set the font size */
+			font-family: "Times New Roman", Times, serif;
+			font-size: 28px;
+			/* Set the font size */
 
 		}
 
 		h2 {
 			color: #3498db;
-            font-family: "Times New Roman", Times, serif;    font-size: 20px; /* Set the font size */
+			font-family: "Times New Roman", Times, serif;
+			font-size: 20px;
+			/* Set the font size */
 
 		}
-   #icon a {
-            color: #2c3e50; /* Set the color for the social media icons */
-            text-decoration: none;
-            margin-right: 10px; /* Adjust spacing between icons */
-        }
 
-        #icon a:hover {
-            color: #3498db; /* Change color on hover */
-    }
-    form {
-        max-width: 400px;
-        max-height: 800px;
-        margin: 0px auto;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-          "Lucida Sans", Arial, sans-serif;
-      }
-      
-      h2 {
-        text-align: center;
-        color: #333;
-      }
-      label {
-        display: block;
-        font-weight: bold;
-        color: #b8b5b5;
-      }
-      label::after {
-        content: " *";
-        color: red;
-      }
-      input,
-      select {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 16px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-      }
-      .password-toggle {
-        position: relative;
-        top: -45px;
-        left: 370px;
-        transform: translateY(0%);
-        cursor: pointer;
-      }
-      button {
-        background-color: #e74c3c;
-        color: #fff;
-        padding: 10px;
-        border: none;
-        margin: 0px 140px;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 14px;
-        width: 25%;
-      }
-      button:hover {
-        background-color: tomato;
-      }
-      
-      @media screen and (max-width: 600px) {
-        form {
-          margin: 10px;
-          padding: 15px;
-        }
-      }
-    
+		#icon a {
+			color: #2c3e50;
+			/* Set the color for the social media icons */
+			text-decoration: none;
+			margin-right: 10px;
+			/* Adjust spacing between icons */
+		}
 
-      
-       
+		#icon a:hover {
+			color: #3498db;
+			/* Change color on hover */
+		}
 
-    </style>
+		form {
+			max-width: 400px;
+			max-height: 800px;
+			margin: 0px auto;
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+				"Lucida Sans", Arial, sans-serif;
+		}
 
-<script>
-    function validateForm() {
-      var name = document.getElementById("name").value;
-      var phone = document.getElementById("phone").value;
-      var gender = document.getElementById("gender").value;
-      var email = document.getElementById("email").value;
-      var password = document.getElementById("password").value;
-      var company = document.getElementById("company").value;
-      var designation = document.getElementById("designation").value;
+		h2 {
+			text-align: center;
+			color: #333;
+		}
 
-      var nameError = document.getElementById("nameError");
-      var phoneError = document.getElementById("phoneError");
-      var genderError = document.getElementById("genderError");
-      var emailError = document.getElementById("emailError");
-      var passwordError = document.getElementById("passwordError");
-      var companyError = document.getElementById("companyError");
-      var designationError = document.getElementById("designationError");
+		label {
+			display: block;
+			font-weight: bold;
+			color: #b8b5b5;
+		}
 
-      nameError.textContent = "";
-      phoneError.textContent = "";
-      genderError.textContent = "";
-      emailError.textContent = "";
-      passwordError.textContent = "";
-      companyError.textContent = "";
-      designationError.textContent = "";
+		label::after {
+			content: " *";
+			color: red;
+		}
 
-      if (
-        !name ||
-        !phone ||
-        gender === "" ||
-        !email ||
-        !password ||
-        !company ||
-        !designation
-      ) {
-        validationMessage.textContent =
-          "All fields are required. Please fill out all the fields.";
-        return false;
-      }
+		input,
+		select {
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 16px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
 
-      if (name.length < 3) {
-        nameError.textContent = "Name should be greater than 3 letters";
-        return false;
-      }
-      if (!/^\d{10}$/.test(phone)) {
-        phoneError.textContent = "Phone number should be 10 digits";
-        return false;
-      }
-      if (gender === "") {
-        genderError.textContent = "Please select a gender";
-        return false;
-      }
-      if (!email.includes("@")) {
-        emailError.textContent = "Email should contain @";
-        return false;
-      }
-      if (
-        !/(?=.[A-Z])(?=.[a-z])(?=.\d)(?=.[!@#\$%\^&\*()-_\+=<>?/\{}\[\]\\\|])\S{8,}/.test(
-          password
-        )
-      ) {
-        passwordError.textContent =
-          "Password should contain at least one uppercase, one lowercase, one digit, one special character, and no whitespace. Minimum length is 8 characters.";
-        return false;
-      }
-      if (company === "") {
-        companyError.textContent = "company name is required";
-        return false;
-      }
-      if (designation === "") {
-        designationError.textContent = "designation is required";
-        return false;
-      }
-      return true;
-    }
-    function togglePasswordVisibility(passwordFieldId) {
-        var passwordField = document.getElementById(passwordFieldId);
-        var icon = document.querySelector(".password-toggle");
+		.password-toggle {
+			position: relative;
+			top: -45px;
+			left: 370px;
+			transform: translateY(0%);
+			cursor: pointer;
+		}
 
-        if (passwordField.type === "password") {
-            passwordField.type = "text";
-            icon.classList.remove("fa-eye-slash");
-            icon.classList.add("fa-eye");
-        } else {
-            passwordField.type = "password";
-            icon.classList.remove("fa-eye");
-            icon.classList.add("fa-eye-slash");
-        }
-    }
-  </script>
+		button {
+			background-color: #e74c3c;
+			color: #fff;
+			padding: 10px;
+			border: none;
+			margin: 0px 140px;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 14px;
+			width: 25%;
+		}
+
+		button:hover {
+			background-color: tomato;
+		}
+
+		@media screen and (max-width: 600px) {
+			form {
+				margin: 10px;
+				padding: 15px;
+			}
+		}
+	</style>
+
+	<script>
+		function validateForm() {
+			var name = document.getElementById("name").value;
+			var phone = document.getElementById("phone").value;
+			var gender = document.getElementById("gender").value;
+			var email = document.getElementById("email").value;
+			var password = document.getElementById("password").value;
+			var dob = new Date(dobInput.value);
+    var dobInput = document.getElementById('dob');
+
+			var dobError = document.getElementById('dobError');
+
+			var nameError = document.getElementById("nameError");
+			var phoneError = document.getElementById("phoneError");
+			var genderError = document.getElementById("genderError");
+			var emailError = document.getElementById("emailError");
+			var passwordError = document.getElementById("passwordError");
+
+			nameError.textContent = "";
+			phoneError.textContent = "";
+			genderError.textContent = "";
+			emailError.textContent = "";
+			passwordError.textContent = "";
+			companyError.textContent = "";
+			designationError.textContent = "";
+
+			if (
+				!name ||
+				!phone ||
+				gender === "" ||
+				!email ||
+				!password ||
+				!company ||
+				!designation
+			) {
+				validationMessage.textContent =
+					"All fields are required. Please fill out all the fields.";
+				return false;
+			}
+
+			if (name.length < 3) {
+				nameError.textContent = "Name should be greater than 3 letters";
+				return false;
+			}
+			if (!/^\d{10}$/.test(phone)) {
+				phoneError.textContent = "Phone number should be 10 digits";
+				return false;
+			}
+			if (gender === "") {
+				genderError.textContent = "Please select a gender";
+				return false;
+			}
+			if (!email.includes("@")) {
+				emailError.textContent = "Email should contain @";
+				return false;
+			}
+			if (
+				!/(?=.[A-Z])(?=.[a-z])(?=.\d)(?=.[!@#\$%\^&\*()-_\+=<>?/\{}\[\]\\\|])\S{8,}/.test(
+					password
+				)
+			) {
+				passwordError.textContent =
+					"Password should contain at least one uppercase, one lowercase, one digit, one special character, and no whitespace. Minimum length is 8 characters.";
+				return false;
+			}
+			if (age < 18) {
+				dobError.innerHTML = 'You must be at least 18 years old';
+				return false;
+			}
+			return true;
+		}
+		function togglePasswordVisibility(passwordFieldId) {
+			var passwordField = document.getElementById(passwordFieldId);
+			var icon = document.querySelector(".password-toggle");
+
+			if (passwordField.type === "password") {
+				passwordField.type = "text";
+				icon.classList.remove("fa-eye-slash");
+				icon.classList.add("fa-eye");
+			} else {
+				passwordField.type = "password";
+				icon.classList.remove("fa-eye");
+				icon.classList.add("fa-eye-slash");
+			}
+			function validateForm() {
+				// Reset previous error messages
+				resetErrors();
+
+				// Validate Name
+				var nameInput = document.getElementById('name');
+				var nameError = document.getElementById('nameError');
+				var nameRegex = /^[A-Za-z\s]+$/;
+				if (!nameRegex.test(nameInput.value)) {
+					nameError.innerHTML = 'Please enter a valid name (only alphabets and spaces)';
+					return false;
+				}
+
+				// Validate Phone
+				var phoneInput = document.getElementById('phone');
+				var phoneError = document.getElementById('phoneError');
+				var phoneRegex = /^\d{10}$/;
+				if (!phoneRegex.test(phoneInput.value)) {
+					phoneError.innerHTML = 'Please enter a valid 10-digit phone number';
+					return false;
+				}
+
+				// Validate Date of Birth
+				var dobInput = document.getElementById('dob');
+				var dobError = document.getElementById('dobError');
+				var currentDate = new Date();
+				var dob = new Date(dobInput.value);
+				var age = currentDate.getFullYear() - dob.getFullYear();
+				if (age < 18) {
+					dobError.innerHTML = 'You must be at least 18 years old';
+					return false;
+				}
+
+				// Add more validations if needed
+
+				// If all validations pass, submit the form
+				document.getElementById('form').submit();
+			}
+
+			function resetErrors() {
+				// Reset all error messages
+				var errorElements = document.getElementsByClassName('error');
+				for (var i = 0; i < errorElements.length; i++) {
+					errorElements[i].innerHTML = '';
+				}
+			}
+		}
+
+
+		function validateForm() {
+			// Reset previous error messages
+			resetErrors();
+
+			// Validate Name
+			var nameInput = document.getElementById('name');
+			var nameError = document.getElementById('nameError');
+			var nameRegex = /^[A-Za-z\s]+$/;
+			if (!nameRegex.test(nameInput.value)) {
+				nameError.innerHTML = 'Please enter a valid name (only alphabets and spaces)';
+				return false;
+			}
+
+			// Validate Phone
+			var phoneInput = document.getElementById('phone');
+			var phoneError = document.getElementById('phoneError');
+			var phoneRegex = /^\d{10}$/;
+			if (!phoneRegex.test(phoneInput.value)) {
+				phoneError.innerHTML = 'Please enter a valid 10-digit phone number';
+				return false;
+			}
+
+			// Validate Date of Birth
+			var dobInput = document.getElementById('dob');
+			var dobError = document.getElementById('dobError');
+			var currentDate = new Date();
+			var dob = new Date(dobInput.value);
+			var age = currentDate.getFullYear() - dob.getFullYear();
+			if (age < 18) {
+				dobError.innerHTML = 'You must be at least 18 years old';
+				return false;
+			}
+
+			// Add more validations if needed
+
+			// If all validations pass, submit the form
+			document.getElementById('form').submit();
+		}
+
+		function resetErrors() {
+			// Reset all error messages
+			var errorElements = document.getElementsByClassName('error');
+			for (var i = 0; i < errorElements.length; i++) {
+				errorElements[i].innerHTML = '';
+			}
+		}
+
+
+	</script>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div id="logo">
-                <img src="https://www.planotechgroupofcompanies.com/wp-content/uploads/2023/11/Picture1-removebg-preview.png" alt="Logo" height="75px" width="250px">
-            </div>
-            <div id="right-side">
-                
-       
-        
-                <li class="li1"> <a href="/">Home</a></li>
-              <li class="li1"><a href="/about-us">About Us</a></li>
-              <li class="li1"><a href="/login">Login</a></li>
-            </div>
-        </nav>
-    </header>
+	<header>
+		<nav>
+			<div id="logo">
+				<img src="https://www.planotechgroupofcompanies.com/wp-content/uploads/2023/11/Picture1-removebg-preview.png"
+					alt="Logo" height="75px" width="250px">
+			</div>
+			<div id="right-side">
 
-<br>
-    <div>
-        <form action="/employee/signup" method="post" id="form">
-		
-            <h2>Signup</h2>
-          <div id="validationMessage" class="error"></div>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="username" />
-          <div id="nameError" class="error"></div>
-    
-          <label for="phone">Phone:</label>
-          <input type="tel" id="phone" name="phone" />
-          <div id="phoneError" class="error"></div>
-    
-          <label for="gender">Gender:</label>
-          <select id="gender" name="gender">
-            <option value="" disabled selected>---</option>
-            <option value="male" name="gender">Male</option>
-            <option value="female" name="gender">Female</option>
-          </select>
-          <div id="genderError" class="error"></div>
-    
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" />
-          <div id="emailError" class="error"></div>
-    
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" />
-          <div id="passwordError" class="error"></div>
-          <i class="fas fa-eye-slash password-toggle" onclick="togglePasswordVisibility('password')"></i>
-    
-          <label for="password">DOB</label>
-          <div class="form-group"> 
-            <input type="date" id="password" name="dob" required>
-        </div>
-    
-          <label for="select">Depertment:</label><br>
-                          <select id="select" name="deptarment">
-                             <option name="deptarment" value=""></option>
-                             <option name="deptarment" value="HR">HR</option>
-                             <option name="deptarment" value="Accounts">Accounts</option>
-                             <option name="deptarment" value="Design">Design</option>
-                             <option name="deptarment" value="IT">IT</option>
-                             <option name="deptarment" value="Marketing">Marketing</option>
-                             <option name="deptarment" value="Production">Production</option>
-                             <option name="deptarment" value="ClientServicing">Client Servicing</option>
-                          </select>
-    
-          <button type="submit" onclick="validateForm()">Submit</button>
-        </form>
-    </div>
-    <br>
-    <footer>
-        <div id="icon">
-            
-            <h5>Follow-us</h5>
-            <a href="https://www.facebook.com/planotechevents" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.instagram.com/planotechevents11/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/darshan-kumar-k/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://twitter.com/PlanotechEvents" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-        </div>
-        <p class="p11">Â© Copyright 2022 Planotech Group</p>
-        <p class="p1">Contact Information:</p>
-        <p class="p2">
-            <i class="fa-regular fa-envelope"></i>
-            planotech@gmail.com |
-            <i class="fa-solid fa-phone"></i>
-            +91 9876543210
-        </p>
-    </footer>
 
-    <script src="https://kit.fontawesome.com/22e204274b.js" crossorigin="anonymous"></script>
-</div>
+
+				<li class="li1"> <a href="/admin/adminHome">Home</a></li>
+			</div>
+		</nav>
+	</header>
+
+	<br>
+	<div>
+		<form action="/employee/signup" method="post" id="form">
+
+			<h2>Add Employee</h2>
+			<h2 th:text="${fail}"></h2>
+			<h2 th:text="${pass}"></h2>
+			<div id="validationMessage" class="error"></div>
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="username" />
+			<div id="nameError" class="error"></div>
+
+			<label for="phone">Phone:</label>
+			<input type="tel" id="phone" name="phone" />
+			<div id="phoneError" class="error"></div>
+
+			<label for="gender">Gender:</label>
+			<select id="gender" name="gender">
+				<option value="" disabled selected>---</option>
+				<option value="male" name="gender">Male</option>
+				<option value="female" name="gender">Female</option>
+			</select>
+			<div id="genderError" class="error"></div>
+
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" />
+			<div id="emailError" class="error"></div>
+
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" />
+			<div id="passwordError" class="error"></div>
+			<i class="fas fa-eye-slash password-toggle" onclick="togglePasswordVisibility('password')"></i>
+
+			<label for="password">DOB</label>
+			<div class="form-group">
+				<input type="date" id="password" name="dob" required>
+			</div>
+
+			<label for="select">Depertment:</label><br>
+			<select id="select" name="deptarment">
+				<option name="deptarment" value=""></option>
+				<option name="deptarment" value="HR">HR</option>
+				<option name="deptarment" value="Accounts">Accounts</option>
+				<option name="deptarment" value="Design">Design</option>
+				<option name="deptarment" value="IT">IT</option>
+				<option name="deptarment" value="Marketing">Marketing</option>
+				<option name="deptarment" value="Production">Production</option>
+				<option name="deptarment" value="ClientServicing">Client Servicing</option>
+			</select>
+			<label for="empid">Employee Id</label>
+			<input type="number" id="id" name="id" />
+			
+
+			<button type="submit" onclick="validateForm()">Submit</button>
+		</form>
+	</div>
+	<br>
+	<footer>
+		<div id="icon">
+
+			<h5>Follow-us</h5>
+			<a href="https://www.facebook.com/planotechevents" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+			<a href="https://www.instagram.com/planotechevents11/?hl=en" target="_blank"><i
+					class="fa-brands fa-instagram"></i></a>
+			<a href="https://www.linkedin.com/in/darshan-kumar-k/" target="_blank"><i
+					class="fa-brands fa-linkedin"></i></a>
+			<a href="https://twitter.com/PlanotechEvents" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+		</div>
+		<p class="p11">Â© Copyright 2022 Planotech Group</p>
+		<p class="p1">Contact Information:</p>
+		<p class="p2">
+			<i class="fa-regular fa-envelope"></i>
+			planotech@gmail.com |
+			<i class="fa-solid fa-phone"></i>
+			+91 9876543210
+		</p>
+	</footer>
+
+	<script src="https://kit.fontawesome.com/22e204274b.js" crossorigin="anonymous"></script>
+	</div>
 </body>
+
 </html>

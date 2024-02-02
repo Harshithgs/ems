@@ -98,4 +98,5 @@ public class AdminDao {
 	public Optional<DesignDepartment> findDesignReport(int id) {
 		return departmentRepository.findById(id);
 	}
+	
 }

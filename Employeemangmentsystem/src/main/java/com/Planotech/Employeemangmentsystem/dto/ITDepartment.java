@@ -4,6 +4,8 @@ import org.springframework.stereotype.Component;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
 import lombok.Data;
 
 @Component
@@ -22,6 +24,7 @@ public class ITDepartment {
 	private int leaves;
 	private double salary;
 	private double dailyscroe;
+	
 	private double totalscroe;
 	private String location;
 }

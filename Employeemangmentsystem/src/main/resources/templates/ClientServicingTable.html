@@ -170,6 +170,8 @@ footer {
         <th>Salary</th>
         <th>Daily Score</th>
         <th>Total Score</th>
+        					<th>Attandance</th>
+
     </tr>
     </thead>
     <tbody>
@@ -185,6 +187,8 @@ footer {
         <td th:text="${list.salary}"></td>
 	    <td th:text="${list.dailyscroe}"></td>
         <td th:text="${list.totalscroe}"></td>
+        <td><a th:href="@{'/admin/attandace/' + ${list.id} +'/ClientServicing'}"><button>View more</button></a></td>
+
   </tr>
     </tbody>
 </table>

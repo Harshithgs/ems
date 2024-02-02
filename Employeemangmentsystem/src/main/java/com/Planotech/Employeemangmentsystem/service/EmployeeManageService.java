@@ -48,7 +48,7 @@ public class EmployeeManageService {
 			return "Signup";
 		} else {
 			manageDao.saveallemp(employeeManage);
-			return "Login";
+			return "AdminHome";
 		}
 	}
 

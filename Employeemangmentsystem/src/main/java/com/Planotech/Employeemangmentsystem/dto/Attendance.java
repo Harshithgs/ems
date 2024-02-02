@@ -1,7 +1,5 @@
 package com.Planotech.Employeemangmentsystem.dto;
 
-import java.time.LocalDate;
-
 import org.springframework.stereotype.Component;
 
 import jakarta.persistence.Entity;
@@ -13,16 +11,12 @@ import lombok.Data;
 @Component
 @Data
 @Entity
-
-public class EmployeeManage {
+public class Attendance {
 	@Id
-	private int id;
-	private String username;
-	private String email;
-	private String password;
-	private long phone;
-	private String gender;
-	private String deptarment;
-	private LocalDate dob;
-
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int Id;
+	private String empId;
+	private String Name;
+	private String Date;
+	private String Time;
 }

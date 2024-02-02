@@ -10,6 +10,7 @@ import org.springframework.ui.ModelMap;
 import com.Planotech.Employeemangmentsystem.dao.AdminDao;
 import com.Planotech.Employeemangmentsystem.dao.EmployeeManageDao;
 import com.Planotech.Employeemangmentsystem.dto.AccountsDepartment;
+import com.Planotech.Employeemangmentsystem.dto.Attendance;
 import com.Planotech.Employeemangmentsystem.dto.ClientServicingDepartment;
 import com.Planotech.Employeemangmentsystem.dto.DesignDepartment;
 import com.Planotech.Employeemangmentsystem.dto.HRDepartment;
@@ -26,7 +27,8 @@ public class AdminService {
 	EmployeeManageDao employeeManageDao;
 	@Autowired
 	AdminDao adminDao;
-
+	@Autowired
+	HelperService helperService;
 	public String Department(String department, HttpSession httpSession, ModelMap map) {
 		// System.out.println(department);
 		if (department.equals("IT")) {
@@ -201,6 +203,66 @@ public class AdminService {
 			List<MarketingDepartment> list = adminDao.fecthAllMarketingTable();
 			map.put("lists", list);
 			return "MarketingTable.html";
+		} else {
+			return "AdminHome.html";
+		}
+	}
+	public String Attandace(int id, String department, ModelMap map, HttpSession httpSession) {
+		String Id="";
+		if(Integer.toString(id).length()==3) {
+				Id="000000"+id;
+			}else {
+				Id="0000000"+id;
+			}
+		if (department.equals("IT")) {
+			ITDepartment it = adminDao.findITReport(id).get();
+			map.put("department", department);
+			map.put("attandace", it);
+			List<Attendance> list=helperService.getAllAttendanceById(Id);
+			map.put("lists", list);
+			return "Attendance.html";
+		} else if (department.equals("HR")) {
+			HRDepartment hr = adminDao.findHRReport(id).get();
+			map.put("department", department);
+			map.put("attandace", hr);
+			List<Attendance> list=helperService.getAllAttendanceById(Id);
+			map.put("lists", list);
+			return "Attendance.html";
+		} else if (department.equals("Accounts")) {
+			AccountsDepartment acc = adminDao.findAccountsReport(id).get();
+			map.put("department", department);
+			map.put("attandace", acc);
+			List<Attendance> list=helperService.getAllAttendanceById(Id);
+			map.put("lists", list);
+			return "Attendance.html";
+		} else if (department.equals("Production")) {
+			ProductionDepartment pro = adminDao.findProductionReport(id).get();
+			map.put("department", department);
+			map.put("attandace", pro);
+			List<Attendance> list=helperService.getAllAttendanceById(Id);
+			map.put("lists", list);
+			return "Attendance.html";
+		} else if (department.equals("Design")) {
+			DesignDepartment des = adminDao.findDesignReport(id).get();
+			map.put("department", department);
+			map.put("attandace", des);
+			List<Attendance> list=helperService.getAllAttendanceById(Id);
+			map.put("lists", list);
+			return "Attendance.html";
+		} else if (department.equals("ClientServicing")) {
+			ClientServicingDepartment cs = adminDao.findClientServicingReport(id).get();
+			map.put("department", department);
+			map.put("attandace", cs);
+			List<Attendance> list=helperService.getAllAttendanceById(Id);
+			map.put("lists", list);
+			return "Attendance.html";
+		} else if (department.equals("Marketing")) {
+			MarketingDepartment mr = adminDao.findMarketingReport(id).get();
+			map.put("department", department);
+			map.put("attandace", mr);
+			List<Attendance> list=helperService.getAllAttendanceById(Id);
+			map.put("lists", list);
+			return "Attendance.html";
 		} else {
 			return "AdminHome.html";
 		}
