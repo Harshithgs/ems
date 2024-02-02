@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+*{
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+}
+body{
+    max-width: 100%;
+}
+nav{
+    max-width: 100%;
+    display: flex;
+    height: 75px;
+    width: 100%;
+    background-color: rgb(226, 211, 183);
+}
+#right-side{
+    max-width: 100%;
+    height: 75px;
+    width: 45%;
+    margin-left: 46%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: red;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    position: relative;
+}
+a:hover{
+    color: blue;
+}
+.fa-solid{
+    position: relative;
+    top: 4px;
+    left: 2px;
+}
+
+
+footer {
+               background-color: #ecf0f1; /* Lightened color */
+               color: #2c3e50;
+               text-align: center;
+               padding: 10px;
+               margin-top: 2%;
+           } p {
+       font-size: 1.2em; /* Increase font size for paragraphs */
+       color: #3f454a;
+   }
+   #abc{
+       width: 75px; /* Set the width to 60% */
+       height: auto; 
+       display: block; /* Remove default inline behavior */
+       margin: 1px auto; 
+   }
+   #d{
+    width: 60%; /* Set the width to 60% */
+    height: auto; /* Maintain aspect ratio while adjusting width */
+    display: block; /* Remove default inline behavior */
+    margin: 10px auto;
+   }
+   #icon a {
+            color: #2c3e50; /* Set the color for the social media icons */
+            text-decoration: none;
+            margin-right: 10px; /* Adjust spacing between icons */
+        }
+
+        #icon a:hover {
+            color: #3498db; /* Change color on hover */
+        } 
+        
+        footer{   
+        padding:25px;
+       background: rgb(226, 211, 183);
+       }
+       h1 {
+            color: #333;
+        }
+
+        input {
+            padding: 8px;
+            margin: 10px 0;
+        }
+        section {
+               margin: 40px;
+               padding: 20px;
+               background-color: #fff;
+               border-radius: 8px;
+               box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                
+           }
+           p{
+            font-family: "Times New Roman", Times, serif;     /* Set the font size */
+		   }
+           button {
+        background-color: #e74c3c;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        margin: 0px 140px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        width: 25%;
+      }
+      button:hover {
+        background-color: tomato;
+      }
+      .report-container {
+      text-align: center;
+    }
+
+    #yy {
+      border: 5px solid  rgb(226, 211, 183); /* Box border color */
+      background-color: black; /* Background color */
+      color: white; /* Text color */
+      padding: 10px;
+      font-family: 'Times New Roman', serif; /* Font style */
+      height: 150px;
+      box-sizing: border-box;
+    }
+	#name{
+		font-size: 25px;
+	}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="logo">
+                <img src="https://www.planotechgroupofcompanies.com/wp-content/uploads/2023/11/Picture1-removebg-preview.png" alt="Logo" height="75px" width="250px">
+            </div>
+            <div id="right-side">
+                <li><a th:href="@{'/admin/emphometable/' + ${department}}">Back</a></li>
+            </div>
+        </nav>
+    </header>
+<div>
+    <section>
+        <center><h1>Report Page</h1></center>
+      <center><span style="font-size: 20px;">UserName: </span><span id="name" th:text="${report.username}" style="font-family: 'Times New Roman', Times, serif;"></span> </center>
+      <div id="report-container"><Center>
+      <p th:text="${report.report}" style="font-family: 'Times New Roman', Times, serif;" id="yy"></p>
+    </Center></div>  
+        <form action="/admin/score" method="post">
+    <label for="dailyScore">Give Score</label>
+    <input type="number" id="dailyScore" name="dailyScore" min="0" max="10" required><br>
+    <input type="number" name="id" th:value="${report.id}" hidden="hidden">
+    <input type="text" name="department" th:value="${department}" hidden="hidden">
+    <button type="submit">Submit</button>
+</form>
+
+    <script>
+        function submitScore() {
+            var scoreInput = document.getElementById('dailyScore');
+            var score = scoreInput.value;
+
+            if (score <= 10) {
+                // Handle submission logic here (e.g., send data to server)
+                alert('Score submitted successfully!');
+            } else {
+                alert('Please enter a score between 0 and 10.');
+            }
+        }
+        
+    </script>
+    </section>
+<footer>
+        <div id="icon">
+            
+            <h5>Follow-us</h5>
+            <a href="https://www.facebook.com/planotechevents" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/planotechevents11/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/darshan-kumar-k/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://twitter.com/PlanotechEvents" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <p class="p11">Â© Copyright 2022 Planotech Group</p>
+        <p class="p1">Contact Information:</p>
+        <p class="p2">
+            <i class="fa-regular fa-envelope"></i>
+            planotech@gmail.com |
+            <i class="fa-solid fa-phone"></i>
+            +91 9876543210
+        </p>
+    </footer>
+
+	<script src="https://kit.fontawesome.com/22e204274b.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Employee Information</title>
+	<!-- Add your stylesheet link here -->
+	<link rel="stylesheet" href="your-stylesheet.css">
+	<style>
+		/* Reset some default styles */
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		/* Set a max-width for the body and center content */
+		body {
+			max-width: 100%;
+			margin: 0 auto;
+			font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+		}
+
+		/* Style the navigation bar */
+		nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 75px;
+			background-color: rgb(226, 211, 183);
+			padding: 0 20px;
+		}
+
+		/* Style the logo */
+		#logo img {
+			height: 75px;
+			width: auto;
+		}
+
+		/* Style the right-side navigation links */
+		#right-side ul {
+			list-style: none;
+			display: flex;
+		}
+
+		#right-side a {
+			text-decoration: none;
+			color: red;
+			font-size: 20px;
+			margin-right: 20px;
+		}
+
+		#right-side a:hover {
+			color: blue;
+		}
+
+		/* Style the main content */
+		main {
+			padding: 20px;
+		}
+
+		h2 {
+			color: #333;
+			text-align: center;
+		}
+
+		/* Style the table */
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 20px;
+		}
+
+		th,
+		td {
+			padding: 12px;
+			text-align: left;
+			border: 1px solid #ddd;
+		}
+
+		th {
+			background-color: #f56f4d;
+			color: white;
+		}
+
+		/* Style the footer */
+		footer {
+			padding: 25px;
+			background: rgb(226, 211, 183);
+			text-align: center;
+		}
+
+		#icon h5 {
+			margin-bottom: 10px;
+		}
+
+		#icon a {
+			color: #2c3e50;
+			text-decoration: none;
+			margin-right: 10px;
+		}
+
+		#icon a:hover {
+			color: #3498db;
+		}
+
+		/* Add responsive styles */
+		@media only screen and (max-width: 768px) {
+			nav {
+				flex-direction: column;
+				height: auto;
+				align-items: flex-start;
+			}
+
+			#right-side {
+				margin-left: 0;
+				margin-top: 10px;
+			}
+
+			#right-side ul {
+				flex-direction: column;
+			}
+
+			#right-side a {
+				margin-right: 0;
+				margin-bottom: 10px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<div id="logo">
+				<img src="https://www.planotechgroupofcompanies.com/wp-content/uploads/2023/11/Picture1-removebg-preview.png"
+					alt="Planotech Logo" height="75px" width="250px">
+			</div>
+			<div id="right-side">
+				<ul>
+					<li><a th:href="@{'/admin/emphometable/' + ${department}}">Back</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<center>
+			<h2>Employee Information</h2>
+		</center>
+		<section>
+			<table border="1">
+				<thead>
+					<tr>
+
+						<th>Date</th>
+						<th>Time</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- Use correct th:field names -->
+					<tr th:each="list:${lists}">
+
+						<td th:text="${list.Date}"></td>
+						<td th:text="${list.Time}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+	<footer>
+		<div id="icon">
+
+			<h5>Follow-us</h5>
+			<a href="https://www.facebook.com/planotechevents" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+			<a href="https://www.instagram.com/planotechevents11/?hl=en" target="_blank"><i
+					class="fa-brands fa-instagram"></i></a>
+			<a href="https://www.linkedin.com/in/darshan-kumar-k/" target="_blank"><i
+					class="fa-brands fa-linkedin"></i></a>
+			<a href="https://twitter.com/PlanotechEvents" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+		</div>
+		<p class="p11">Â© Copyright 2022 Planotech Group</p>
+		<p class="p1">Contact Information:</p>
+		<p class="p2">
+			<i class="fa-regular fa-envelope"></i>
+			planotech@gmail.com |
+			<i class="fa-solid fa-phone"></i>
+			+91 9876543210
+		</p>
+	</footer>
+
+	<script src="https://kit.fontawesome.com/22e204274b.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
