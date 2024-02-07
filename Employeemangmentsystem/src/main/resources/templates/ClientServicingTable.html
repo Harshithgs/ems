@@ -184,7 +184,7 @@ footer {
       	<td th:text="${list.intime}"></td>
         <td th:text="${list.outtime}"></td>
         <td th:text="${list.leaves}"></td>
-        <td th:text="${list.salary}"></td>
+        <td><span th:text="${list.salary}"></span><a th:href="@{'/admin/salary/' + ${list.id} +'/ClientServicing'}"><button>salary</button></a></td>
 	    <td th:text="${list.dailyscroe}"></td>
         <td th:text="${list.totalscroe}"></td>
         <td><a th:href="@{'/admin/attandace/' + ${list.id} +'/ClientServicing'}"><button>View more</button></a></td>

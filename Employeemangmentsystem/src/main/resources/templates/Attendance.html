@@ -149,6 +149,7 @@
 			<h2>Employee Information</h2>
 		</center>
 		<section>
+		<h2 th:text="${attendance.username}"></h2>
 			<table border="1">
 				<thead>
 					<tr>
@@ -160,8 +161,8 @@
 				<tbody>
 					<!-- Use correct th:field names -->
 					<tr th:each="attendance : ${lists}">
-            <td th:text="${attendance.Date}"></td>
-            <td th:text="${attendance.Time}"></td> 
+            <td th:text="${attendance.empdate}"></td>
+            <td th:text="${attendance.emptime}"></td> 
         </tr>
 				</tbody>
 			</table>

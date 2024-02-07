@@ -16,7 +16,7 @@ public class Attendance {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int Id;
 	private String empId;
-	private String Name;
-	private String Date;
-	private String Time;
+	private String name;
+	private String empdate;
+	private String emptime;
 }

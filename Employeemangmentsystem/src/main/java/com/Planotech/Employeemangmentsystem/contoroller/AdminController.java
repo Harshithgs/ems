@@ -1,5 +1,7 @@
 package com.Planotech.Employeemangmentsystem.contoroller;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -37,6 +39,10 @@ public class AdminController {
 
 	@GetMapping("/report/{id}/{department}")
 	public String Report(@PathVariable int id, @PathVariable String department, ModelMap map, HttpSession httpSession) {
+//		LocalDate currentDate = LocalDate.now();
+//		String useDate = "" + currentDate.getDayOfMonth() + "/" + currentDate.getMonthValue() + "/"
+//				+ currentDate.getYear();
+//		adminService.updateInAndOut(useDate);
 		return adminService.Report(id, department, map, httpSession);
 	}
 
@@ -61,6 +67,10 @@ public class AdminController {
 	public String upload(@RequestParam MultipartFile file, HttpSession httpSession, ModelMap map) {
 	    if (excelHelper.checkExcelFormat(file)) {
 	        helperService.save(file);
+	        LocalDate currentDate = LocalDate.now();
+			String useDate = "" + currentDate.getDayOfMonth() + "/" + currentDate.getMonthValue() + "/"
+					+ currentDate.getYear();
+			adminService.updateInAndOut(useDate);
 	        map.put("pass", "Uploaded");
 	        return "AdminHome.html";
 	    } else {
@@ -68,5 +78,14 @@ public class AdminController {
 	        return "AdminHome.html";
 	    }
 	}
-	
+	@PostMapping("/sala")
+	public String Salary(@RequestParam String department,@RequestParam double salary,@RequestParam int id,ModelMap map,HttpSession httpSession) {
+		return adminService.salary(department, salary, id, map, httpSession);
+
+	}
+	@GetMapping("/salary/{id}/{department}")
+	public String UpdateSalary(@PathVariable int id, @PathVariable String department, ModelMap map, HttpSession httpSession) {
+		System.out.println(id+" "+department);
+		return adminService.loadsalary(id, department, map, httpSession);
+	}
 }

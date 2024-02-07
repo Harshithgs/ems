@@ -11,5 +11,9 @@ public interface AttendanceRepository extends JpaRepository<Attendance, Integer>
 
 	List<Attendance> findByEmpId(String EmpId);
 
+	List<Attendance> findByEmpdate(String dateString);
+
+
+
 
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.Planotech.Employeemangmentsystem.dto.AccountsDepartment;
+import com.Planotech.Employeemangmentsystem.dto.Attendance;
 import com.Planotech.Employeemangmentsystem.dto.ClientServicingDepartment;
 import com.Planotech.Employeemangmentsystem.dto.DesignDepartment;
 import com.Planotech.Employeemangmentsystem.dto.HRDepartment;
@@ -14,6 +15,7 @@ import com.Planotech.Employeemangmentsystem.dto.ITDepartment;
 import com.Planotech.Employeemangmentsystem.dto.MarketingDepartment;
 import com.Planotech.Employeemangmentsystem.dto.ProductionDepartment;
 import com.Planotech.Employeemangmentsystem.repository.AccountsDepartmentRepository;
+import com.Planotech.Employeemangmentsystem.repository.AttendanceRepository;
 import com.Planotech.Employeemangmentsystem.repository.ClientServicingDepartmentRepository;
 import com.Planotech.Employeemangmentsystem.repository.DesignDepartmentRepository;
 import com.Planotech.Employeemangmentsystem.repository.EmployeeManageRepository;
@@ -42,7 +44,9 @@ public class AdminDao {
 	ProductionDepartmentRepository productionDepartmentRepository;
 	@Autowired
 	DesignDepartmentRepository departmentRepository;
-
+	@Autowired
+	AttendanceRepository attendanceRepository;
+	
 	public List<ITDepartment> fetchAllItTable() {
 		return itDepartmentRepository.findAll();
 	}
@@ -99,4 +103,11 @@ public class AdminDao {
 		return departmentRepository.findById(id);
 	}
 	
+	public List<Attendance> findAllAttendance() {
+		return attendanceRepository.findAll();
+	}
+
+	 public List<Attendance> findByEmpDate(String dateString) {
+	        return attendanceRepository.findByEmpdate(dateString);
+	    }
 }

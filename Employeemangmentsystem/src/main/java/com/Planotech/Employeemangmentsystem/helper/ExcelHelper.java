@@ -77,13 +77,13 @@ public class ExcelHelper {
 						int month = localDate.getMonthValue();
 						int day = localDate.getDayOfMonth();
 
-						p.setDate(day+"/"+month+"/"+year);
+						p.setEmpdate(day+"/"+month+"/"+year);
 						break;
 					case 3:
 //						System.out.println("4");
 						Date time=cell.getDateCellValue();
 //						System.out.println(time);
-						p.setTime(time.getHours()+":"+time.getMinutes()+":"+time.getSeconds());
+						p.setEmptime(time.getHours()+":"+time.getMinutes()+":"+time.getSeconds());
 					    break;
 					default:
 						break;

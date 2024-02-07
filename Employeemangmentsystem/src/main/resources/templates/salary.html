@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			max-width: 100%;
+		}
+
+		nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 75px;
+			background-color: rgb(226, 211, 183);
+			max-width: 100%;
+		}
+
+		#right-side {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			list-style: none;
+			max-width: 100%;
+			width: 45%;
+		}
+
+		a {
+			text-decoration: none;
+			color: red;
+			font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+			font-size: 20px;
+			position: relative;
+		}
+
+		a::after {
+			content: " ";
+			height: 3px;
+			width: 0%;
+			background-color: #001C30;
+			border-radius: 25%;
+			position: absolute;
+			top: 22px;
+			left: 0;
+			transition: width 0.5s;
+		}
+
+		a:hover {
+			color: blue;
+		}
+
+		a:hover::after {
+			width: 100%;
+		}
+
+		#icon a {
+			color: #2c3e50;
+			text-decoration: none;
+			margin-right: 10px;
+		}
+
+		#icon a:hover {
+			color: #3498db;
+		}
+
+		footer {
+			background: rgb(226, 211, 183);
+			padding: 25px;
+			text-align: center;
+		}
+
+		footer p {
+			font-size: 1.2em;
+			color: #3f454a;
+		}
+
+		#logo img {
+			height: 75px;
+			width: 250px;
+		}
+
+		form {
+			max-width: 400px;
+			/* Adjust the maximum width of the form */
+			margin: 20px auto;
+			/* Center the form horizontally with margin */
+			padding: 20px;
+			/* Add padding to the form */
+			background-color: #f9f9f9;
+			/* Set a light background color for the form */
+			border-radius: 10px;
+			/* Add border radius for rounded corners */
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			/* Add a subtle box shadow for depth */
+		}
+
+		form input form button {
+			display: block;
+			/* Make input and button elements block-level */
+			width: calc(100% - 20px);
+			/* Make input and button elements take up full width minus padding */
+			padding: 10px;
+			/* Add padding to input and button elements */
+			margin: 10px auto;
+			/* Center the input and button elements horizontally with margin */
+			border: 1px solid #ccc;
+			/* Add border for input elements */
+			border-radius: 5px;
+			/* Add border radius for rounded corners */
+			font-size: 16px;
+			/* Set font size for input elements */
+			box-sizing: border-box;
+			/* Ensure that padding and border are included in the width */
+		}
+
+		form button {
+			background-color: #4CAF50;
+			/* Set background color for the button */
+			color: white;
+			/* Set text color for the button */
+			cursor: pointer;
+			/* Add pointer cursor on hover */
+			transition: background-color 0.3s ease;
+			/* Smooth transition for background color change */
+		}
+
+		form button:hover {
+			background-color: #45a049;
+			/* Darken the background color on hover */
+		}
+
+		/* Ensure hidden input remains hidden */
+		form input[hidden="hidden"] {
+			display: none;
+		}
+	</style>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			var form = document.querySelector('form');
+
+			form.addEventListener('submit', function (event) {
+				event.preventDefault(); // Prevent form submission
+
+				// Ask for password in an alert
+				var password = prompt('Please enter the password:');
+
+				// Check if password is not equal to 'admin'
+				if (password !== 'admin') {
+					// If password is incorrect, refresh the page
+					window.location.reload();
+				} else {
+					// If password is correct, submit the form
+					form.submit();
+				}
+			});
+		});
+	</script>
+
+</head>
+
+<body>
+
+
+	<header>
+		<nav>
+			<div id="logo">
+				<img src="https://www.planotechgroupofcompanies.com/wp-content/uploads/2023/11/Picture1-removebg-preview.png"
+					alt="Logo" height="75px" width="250px">
+			</div>
+			<div id="right-side">
+
+				<li><a th:href="@{'/admin/emphometable/' + ${department}}">Back</a></li>
+
+			</div>
+		</nav>
+	</header>
+	<form action="/admin/sala" method="post">
+		Enter salary<input type="number" name="salary" id="dd">
+		<input type="text" name="department" th:value="${department}" hidden="hidden">
+		<input type="number" name="id" th:value="${id}" hidden="hidden">
+		<button>Submit</button>
+	</form>
+
+	<footer>
+		<div id="icon">
+
+			<h5>Follow-us</h5>
+			<a href="https://www.facebook.com/planotechevents" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+			<a href="https://www.instagram.com/planotechevents11/?hl=en" target="_blank"><i
+					class="fa-brands fa-instagram"></i></a>
+			<a href="https://www.linkedin.com/in/darshan-kumar-k/" target="_blank"><i
+					class="fa-brands fa-linkedin"></i></a>
+			<a href="https://twitter.com/PlanotechEvents" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+		</div>
+		<p class="p11">© Copyright 2022 Planotech Group</p>
+		<p class="p1">Contact Information:</p>
+		<p class="p2">
+			<i class="fa-regular fa-envelope"></i>
+			planotech@gmail.com |
+			<i class="fa-solid fa-phone"></i>
+			+91 9876543210
+		</p>
+	</footer>
+
+	<script src="https://kit.fontawesome.com/22e204274b.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
