@@ -85,7 +85,7 @@ public class AdminController {
 	}
 	@GetMapping("/salary/{id}/{department}")
 	public String UpdateSalary(@PathVariable int id, @PathVariable String department, ModelMap map, HttpSession httpSession) {
-		System.out.println(id+" "+department);
+//		System.out.println(id+" "+department);
 		return adminService.loadsalary(id, department, map, httpSession);
 	}
 }

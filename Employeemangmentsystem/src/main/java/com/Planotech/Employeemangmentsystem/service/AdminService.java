@@ -396,10 +396,10 @@ public class AdminService {
 //		}
 //	}
 	public String loadsalary(int id, String department, ModelMap map, HttpSession httpSession) {
-		System.out.println(id + " " + department);
+//		System.out.println(id + " " + department);
 		if (department.equals("IT")) {
 			ITDepartment it = adminDao.findITReport(id).get();
-			System.out.println(it);
+//			System.out.println(it);
 			map.put("department", department);
 			map.put("report", it);
 			return "salary.html";

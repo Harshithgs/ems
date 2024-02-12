@@ -341,7 +341,7 @@ public class EmployeeManageService {
 		} else if (department.equals("HR")) {
 			Optional<HRDepartment> itList = manageDao.findByHR(id);
 			HRDepartment it = itList.get();
-						map.put("Id", id);
+			map.put("Id", id);
 			map.put("list", it);
 			return "HRdepartment.html";
 		} else if (department.equals("Accounts")) {
@@ -376,6 +376,54 @@ public class EmployeeManageService {
 			return "ClientServicingdepartment.html";
 		} else {
 			return "homepage.html";
+		}
+	}
+
+	public String editProfile(int Id, String department, HttpSession httpSession, ModelMap map) {
+		if (department.equals("IT")) {
+			Optional<ITDepartment> itList = manageDao.findByIT(Id);
+			ITDepartment it = itList.get();
+			map.put("list", it);
+			map.put("Id", Id);
+			return "EmpProfile.html";
+		} else if (department.equals("Production")) {
+			Optional<ProductionDepartment> itList = manageDao.findByProduction(Id);
+			ProductionDepartment it = itList.get();
+			map.put("list", it);
+			map.put("Id", Id);
+			return "EmpProfile.html";
+		} else if (department.equals("Design")) {
+			Optional<DesignDepartment> itList = manageDao.findByDesign(Id);
+			DesignDepartment it = itList.get();
+			map.put("list", it);
+			map.put("Id", Id);
+			return "EmpProfile.html";
+		} else if (department.equals("HR")) {
+			Optional<HRDepartment> itList = manageDao.findByHR(Id);
+			HRDepartment it = itList.get();
+			map.put("list", it);
+			map.put("Id", Id);
+			return "EmpProfile.html";
+		} else if (department.equals("ClientServicing")) {
+			Optional<ClientServicingDepartment> itList = manageDao.findByClientServicing(Id);
+			ClientServicingDepartment it = itList.get();
+			map.put("list", it);
+			map.put("Id", Id);
+			return "EmpProfile.html";
+		} else if (department.equals("Marketing")) {
+			Optional<MarketingDepartment> itList = manageDao.findByMarketing(Id);
+			MarketingDepartment it = itList.get();
+			map.put("list", it);
+			map.put("Id", Id);
+			return "EmpProfile.html";
+		} else if (department.equals("Accounts")) {
+			Optional<AccountsDepartment> itList = manageDao.findByAccounts(Id);
+			AccountsDepartment it = itList.get();
+			map.put("list", it);
+			map.put("Id", Id);
+			return "EmpProfile.html";
+		} else {
+			return "EmpProfile.html";
 		}
 	}
 }

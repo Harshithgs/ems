@@ -41,24 +41,8 @@
 			position: relative;
 		}
 
-		a::after {
-			content: " ";
-			height: 3px;
-			width: 0%;
-			background-color: #001C30;
-			border-radius: 25%;
-			position: absolute;
-			top: 22px;
-			left: 0;
-			transition: width 0.5s;
-		}
-
 		a:hover {
 			color: blue;
-		}
-
-		a:hover::after {
-			width: 100%;
 		}
 
 		#icon a {
@@ -141,6 +125,9 @@
 		form input[hidden="hidden"] {
 			display: none;
 		}
+		#space {
+			height:400px; 
+		}
 	</style>
 
 	<script>
@@ -169,7 +156,7 @@
 
 <body>
 
-
+	
 	<header>
 		<nav>
 			<div id="logo">
@@ -184,12 +171,13 @@
 		</nav>
 	</header>
 	<form action="/admin/sala" method="post">
+		
 		Enter salary<input type="number" name="salary" id="dd">
 		<input type="text" name="department" th:value="${department}" hidden="hidden">
 		<input type="number" name="id" th:value="${id}" hidden="hidden">
 		<button>Submit</button>
 	</form>
-
+	<div id="space"></div>
 	<footer>
 		<div id="icon">
 

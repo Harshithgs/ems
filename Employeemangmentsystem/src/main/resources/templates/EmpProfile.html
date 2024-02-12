@@ -208,34 +208,33 @@ footer {
             </div>
             <div id="right-side">
                 
-                <li><a href="/login">Log Out</a></li>
+                <li><a th:href="@{'/emphome/' + ${department} + '/' + ${Id}}">Home</a></li>
             </div>
         </nav>
     </header>
 
 <div>
-
 <section>
    <center><h1>User profile page</h1></center> 
-    <form id="myForm" action="/profile" method="post">
+    <form id="myForm" action="/employee/profile" method="post">
         <div class="profile-pic">
          <center>  <img src="https://img.freepik.com/free-vector/illustration-businessman_53876-5856.jpg?size=626&ext=jpg&ga=GA1.1.632798143.1705968000&semt=ais" alt="Profile Picture" id="im">
          </center>  </div>
 
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username">
+        <input type="text" id="username" name="username" th:placeholder="${list.username}">
         <div class="error-message" id="usernameError"></div>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
+        <input type="email" id="email" name="email" th:placeholder="${list.email}">
         <div class="error-message" id="emailError"></div>
 
         <label for="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone">
+        <input type="tel" id="phone" name="phone" th:placeholder="${list.mobile}">
         <div class="error-message" id="phoneError"></div>
 
         <label for="address">Address:</label>
-        <input type="text" id="address" name="address">
+        <input type="text" id="address" name="address" th:placeholder="${list.addres}">
         <div class="error-message" id="addressError"></div>
 
         <input type="number" name="Id" th:value="${Id}" hidden="hidden"> 

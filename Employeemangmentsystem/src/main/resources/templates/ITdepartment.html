@@ -154,7 +154,8 @@ footer {
                 <img src="https://www.planotechgroupofcompanies.com/wp-content/uploads/2023/11/Picture1-removebg-preview.png" alt="Logo" height="75px" width="250px">
             </div>
             <div id="right-side">
-                <li><a href="/logout">Log out</a></li>
+            	<li><a href="/logout">logout</a></li>
+            	<li><a th:href="@{'/employee/profile/' + ${list.id} +'/IT'}">profile</a></li>
             </div>
         </nav>
     </header>
